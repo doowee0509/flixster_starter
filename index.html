@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flixster</title>
+    <link rel = "icon" href = "https://thumbs.dreamstime.com/b/letter-f-red-artistic-fiber-mesh-style-isolated-black-background-93119444.jpg" type = "image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Lato&family=Poppins:ital,wght@1,400;1,600&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/55590910b3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="body-container">
+        <div class="header-wrapper" id="header-scroll">
+            <div class="header">
+                <h1><a href=".">FLIXSTER</a></h1>
+                <div class="menu-bar">
+                    <div class="menu-bar-item" id="now-playing">Now Playing</div>
+                    <div class="menu-bar-item" id="explore">Explore</div>
+                    <div class="menu-bar-item" id="trending">Trending</div>
+                    <div class="menu-bar-item" id="tv">TV</div>
+                    <div class="menu-bar-item" id="genres">Genres</div>
+                </div>
+                <form class="search-form">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" name="field1" placeholder="Search a movie" required/>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="results-container">
+            <div class="movies-grid">
+            </div>
+            <div class="btn-wrapper">
+                <input type="button" id="load-more-movies-btn" name="go" value="Show More!" />
+                <button id="close-search-btn"><a href="#header-scroll">Close Search!</a></button>
+                <button id="close-search-btn">Close Search!</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
