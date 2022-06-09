@@ -1,1 +1,176 @@
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Acme', sans-serif;
+}
+
+.active {
+  background-color: #363636;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.body-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.body-container .header-wrapper {
+  min-height: 5rem;
+}
+
+.body-container .header-wrapper .header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 5rem;
+  background-color: #191919;
+  border-bottom: solid 2px #363636;
+  width: 100%;
+}
+
+.body-container .header-wrapper .header h1 {
+  padding: 1rem;
+}
+
+.body-container .header-wrapper .header h1 a {
+  color: #db0602;
+  text-decoration: none;
+}
+
+.body-container .header-wrapper .header h1 a:active {
+  color: #db0602;
+}
+
+.body-container .header-wrapper .header .menu-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.body-container .header-wrapper .header .menu-bar .menu-bar-item {
+  color: white;
+  padding: 1.5rem;
+  min-width: 4rem;
+  text-align: center;
+}
+
+.body-container .header-wrapper .header .search-form {
+  padding: 1rem;
+}
+
+.body-container .header-wrapper .header .search-form .search-bar {
+  padding-right: 1rem;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.body-container .header-wrapper .header .search-form .search-bar input[type="text"] {
+  font-size: 20px;
+  font-family: inherit;
+}
+
+.body-container .header-wrapper .header .search-form .search-bar button {
+  font-size: 20px;
+}
+
+.body-container .results-container .movies-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+}
+
+.body-container .results-container .movies-grid .movie-card {
+  text-align: center;
+}
+
+.body-container .results-container .movies-grid .movie-card h1 {
+  color: white;
+  font-size: 1rem;
+}
+
+.body-container .results-container .movies-grid .movie-card img {
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.body-container .results-container .movies-grid .movie-card img:hover {
+  -webkit-filter: drop-shadow(0px 6px 3px #363636);
+          filter: drop-shadow(0px 6px 3px #363636);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.body-container .results-container .movies-grid h1 {
+  color: white;
+  font-size: 5rem;
+}
+
+.body-container .results-container .btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.body-container .results-container .btn-wrapper #load-more-movies-btn {
+  font-size: 20px;
+  font-family: inherit;
+  margin: 1rem;
+}
+
+.body-container .results-container .btn-wrapper #close-search-btn {
+  font-size: 20px;
+  font-family: inherit;
+  margin: 1rem;
+  display: none;
+}
+
+.body-container .results-container .btn-wrapper #close-search-btn a {
+  text-decoration: none;
+  color: black;
+}
+
+.body-container .results-container .btn-wrapper #close-search-btn a:visited {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */
