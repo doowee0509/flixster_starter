@@ -63,6 +63,7 @@ Getting the search by genre to work and the popup went well in the end, I defini
 - Add any links to open-source libraries used in your project.
 [W3School](https://www.w3schools.com)
 [StackOverFlow](https://stackoverflow.com)
+[Lite Youtube](https://github.com/paulirish/lite-youtube-embed)
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
