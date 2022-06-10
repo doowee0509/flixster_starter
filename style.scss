@@ -144,6 +144,7 @@ body{
     }
 
     .popup-container{
+        display: flex;
         .popup-card{
             transition: 200ms ease-in-out;
             position: fixed;
@@ -201,4 +202,27 @@ body{
 
 #genres:hover .genres-list {
     display: grid;
+}
+
+// media queries
+
+@media screen and (max-width: 1440px){
+    .genres-list{
+        right: 20.4% !important;
+        top: 9.2% !important;
+    }
+    .popup-card{
+        height: 40rem !important;
+        .trailer{
+            width: 360px !important;
+            height: 215px !important;
+            resize: both !important;
+        }
+        h1{
+            font-size: 1rem !important;
+        }
+        span{
+            font-size: .8rem !important;
+        }
+    }
 }
