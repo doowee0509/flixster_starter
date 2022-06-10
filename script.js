@@ -58,16 +58,29 @@ var mode = 'now-playing'
 var currKeywords = ''
 var currGenresId = 0
 var popupIndex = 0
-form.addEventListener('submit', searchMovie)
-showMoreBtn.addEventListener('click', showMoreResults)
-closeSearchBtn.addEventListener('click', closeSearch)
-nowPlayingTab.addEventListener('click', nowPlaying)
-exploreTab.addEventListener('click', explore)
-trendingTab.addEventListener('click', getTrending)
-tvTab.addEventListener('click', getTvShows)
-genresList.addEventListener('click', searchGenres)
-overlay.addEventListener('click', closePopup)
-closeBtn.addEventListener('click', closePopup)
+
+function addEventListeners(
+    form,
+    showMoreBtn,
+    closeSearchBtn,
+    nowPlayingTab,
+    exploreTab,
+    trendingTab,
+    tvTab,genresList,overlay,closeBtn
+) {
+    form.addEventListener('submit', searchMovie)
+    showMoreBtn.addEventListener('click', showMoreResults)
+    closeSearchBtn.addEventListener('click', closeSearch)
+    nowPlayingTab.addEventListener('click', nowPlaying)
+    exploreTab.addEventListener('click', explore)
+    trendingTab.addEventListener('click', getTrending)
+    tvTab.addEventListener('click', getTvShows)
+    genresList.addEventListener('click', searchGenres)
+    overlay.addEventListener('click', closePopup)
+    closeBtn.addEventListener('click', closePopup)
+}
+
+
 
 async function searchMovie(e) {
     //prevent page from re-loading
@@ -76,11 +89,12 @@ async function searchMovie(e) {
     //scroll to top
     topFunction()
 
-    //hide close search btn
+    //hide close search btn and toggle highlight
     closeSearchBtn.style.display = 'none'
+    mode = 'search'
+    toggleTab()
     //setting up the api url and reset page to 1
     page = 1
-    mode = 'search'
     var searchTerm = searchInput.value.split(' ').join('+')
     currKeywords = searchTerm
     let apiUrl = searchUrl + `api_key=${API_KEY}&query=${searchTerm}&page=${page}&sort_by=vote_count.desc`
@@ -271,25 +285,24 @@ async function getMovieDetails(movieId) {
 
     //add the pop up to the container
     popupGrid.innerHTML += `
-    <div class="popup-card" id="popup-${popupIndex}">
-    <iframe class="trailer" style="width: 560px; height: 315px;" src="${youtubeUrl + youtubeKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="movie-details"> 
-    <h1 class='movie-title'>${title}</h1>
-    <img class='movie-poster movie-poster-${popupIndex}' src=${imgUrl} alt='movie-poster' onclick="popup(${popupIndex})">
-        <h1 class='movie-votes'>Rating: ${responseData.vote_average}</h1>
-        <h1 class='movie-genres'>Genres: ${genresStr}</h1>
-        <h1 class='movie-release'>Release date: ${responseData.release_date}</h1>
-        <h1 class='movie-runtime'>Runtime: ${responseData.runtime} minutes</h1>
-        <span>${responseData.overview}</span>
+        <div class="popup-card" id="popup-${popupIndex}">
+        <lite-youtube videoid=${youtubeKey} playlabel="Play: Keynote (Google I/O '18)" class="trailer"></lite-youtube>
+        <div class="movie-details"> 
+        <h1 class='movie-title'>${title}</h1>
+        <img class='movie-poster movie-poster-${popupIndex}' src=${imgUrl} alt='movie-poster' onclick="popup(${popupIndex})">
+            <h1 class='movie-votes'>Rating: ${responseData.vote_average}</h1>
+            <h1 class='movie-genres'>Genres: ${genresStr}</h1>
+            <h1 class='movie-release'>Release date: ${responseData.release_date}</h1>
+            <h1 class='movie-runtime'>Runtime: ${responseData.runtime} minutes</h1>
+            <span>${responseData.overview}</span>
+        </div>
     </div>
-</div>
-    `
+        `
     popupIndex++
 }
 
 async function displayResults(data, showMore) {
     console.log(data)
-    // var size = data.length < 9 ? 9 : data.length
     if (!showMore){
         results.innerHTML = ``
         popupGrid.innerHTML = ``
@@ -346,36 +359,27 @@ function closeSearch(){
     closeSearchBtn.style.display = 'none'
     page = 1
     topFunction()
-    switch(mode)  {
-        case 'search':
-            setTimeout(nowPlaying, 500)
-            break
-        case 'explore':
-            setTimeout(explore, 500)
-            break
-        case 'tv':
-            setTimeout(getTvShows, 500)
-            break
-        case 'trending':
-            setTimeout(getTrending, 500)
-            break
-        case 'genres':
-            setTimeout(searchGenres, 500)
-            break
-        default:
-            setTimeout(nowPlaying, 500)
-        }
-    
+    setTimeout(nowPlaying, 500)
 }
 
 function toggleTab() {
     for (let i = 0; i < menuBarTabs.length; i++) {
         menuBarTabs[i].classList.remove('active')
     }
-    elem = document.querySelector(`#${mode}`)
-    elem.classList.toggle('active')
+
+    if (mode !== 'search') {
+        elem = document.querySelector(`#${mode}`)
+        elem.classList.toggle('active')
+    }
 }
 
 window.onload = function (){
+    addEventListeners(form,
+        showMoreBtn,
+        closeSearchBtn,
+        nowPlayingTab,
+        exploreTab,
+        trendingTab,
+        tvTab,genresList,overlay,closeBtn)
     nowPlaying()
 }
