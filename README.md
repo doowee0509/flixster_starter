@@ -2,11 +2,11 @@
 
 ## Week 1 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **DUY NGUYEN**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **8** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://doowee0509.github.io/flixster_starter/)
 
 ### Application Features
 
