@@ -42,9 +42,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://doowee0509.git
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+![Animated Walkthrough](https://user-images.githubusercontent.com/96898896/173132601-068dc901-7084-4990-8254-42d22bc16ded.gif)
 
 ### Reflection
 
@@ -58,7 +56,7 @@ If I had more time I would love to try to improve the youtube embeds loading spe
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Getting the search by genre to work and the popup went well in the end, I definitely struggled a lot. One things that didn't go as planned and I noticed someone mention that is about the youtube embeds. It's causing my website to be really slow because it takes a little bit of time to load. A peer mentioned that they were using promises so I would love to look into that and improve the running speed of the site. 
 
 ### Open-source libraries used
 
