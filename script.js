@@ -272,7 +272,7 @@ async function getMovieDetails(movieId) {
     //add the pop up to the container
     popupGrid.innerHTML += `
     <div class="popup-card" id="popup-${popupIndex}">
-    <iframe width="560" height="315" src="${youtubeUrl + youtubeKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="trailer" style="width: 560px; height: 315px;" src="${youtubeUrl + youtubeKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="movie-details"> 
     <h1 class='movie-title'>${title}</h1>
     <img class='movie-poster movie-poster-${popupIndex}' src=${imgUrl} alt='movie-poster' onclick="popup(${popupIndex})">
