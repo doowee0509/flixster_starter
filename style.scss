@@ -7,7 +7,6 @@ body{
     height: 100%;
     background-color: black;
     font-family: 'Acme', sans-serif;
-    // scroll-behavior: smooth;
 }
 
 .active{
@@ -52,6 +51,7 @@ body{
                     border: solid 1px rgb(25, 25, 25);
                     &:hover{
                         background-color: rgb(54, 54, 54);
+                        cursor: pointer;
                         transition: 200ms ease-in-out;
                     }
                     .genres-list{
@@ -61,12 +61,13 @@ body{
                         grid-template-columns: 1fr 1fr 1fr;
                         min-width: 30rem;
                         background-color:  rgb(54,54,54);
-                        right: 21%;
-                        top: 9%;
+                        right: 28%;
+                        top: 7%;
                         display: none;
                         padding: 1rem;
                         .genres-item:hover{
                             background-color: rgb(25,25,25);
+                            cursor: pointer;
                         }
                     }
                 }
@@ -141,7 +142,62 @@ body{
             }
         }
     }
+
+    .popup-container{
+        .popup-card{
+            transition: 200ms ease-in-out;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0);
+            color: black;
+            border: 1px solid black;
+            border-radius: 2rem;
+            z-index: 10;
+            background-color: rgb(242, 233, 233);
+            height:50rem;
+            max-width: 70%;
+            padding: 2rem;
+            h1{
+                font-size: 1.2rem;
+            }
+        }
+        .close-btn{
+            position: fixed;
+            right: 25.5%;
+            top: 7.5%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: none;
+            z-index: 11;
+            color: black;
+            display: none;
+        }
+        .popup-card.active{
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .overlay{
+        position: fixed;
+        transition: 200ms ease-in-out;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+        pointer-events: none;
+    }
+    .overlay.active{
+        opacity: 1;
+        pointer-events: all;
+    }
 }
+
 
 #genres:hover .genres-list {
     display: grid;

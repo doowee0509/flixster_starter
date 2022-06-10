@@ -84,6 +84,7 @@ body {
 
 .body-container .header-wrapper .header .menu-bar .menu-bar-item:hover {
   background-color: #363636;
+  cursor: pointer;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
 }
@@ -97,14 +98,15 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
   min-width: 30rem;
   background-color: #363636;
-  right: 21%;
-  top: 9%;
+  right: 28%;
+  top: 7%;
   display: none;
   padding: 1rem;
 }
 
 .body-container .header-wrapper .header .menu-bar .menu-bar-item .genres-list .genres-item:hover {
   background-color: #191919;
+  cursor: pointer;
 }
 
 .body-container .header-wrapper .header .search-form {
@@ -199,6 +201,66 @@ body {
 
 .body-container .results-container .btn-wrapper #close-search-btn a:visited {
   color: black;
+}
+
+.body-container .popup-container .popup-card {
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  color: black;
+  border: 1px solid black;
+  border-radius: 2rem;
+  z-index: 10;
+  background-color: #f2e9e9;
+  height: 50rem;
+  max-width: 70%;
+  padding: 2rem;
+}
+
+.body-container .popup-container .popup-card h1 {
+  font-size: 1.2rem;
+}
+
+.body-container .popup-container .close-btn {
+  position: fixed;
+  right: 25.5%;
+  top: 7.5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  z-index: 11;
+  color: black;
+  display: none;
+}
+
+.body-container .popup-container .popup-card.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.body-container .overlay {
+  position: fixed;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.body-container .overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 #genres:hover .genres-list {
