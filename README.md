@@ -42,9 +42,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://doowee0509.git
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+![Animated Walkthrough](https://user-images.githubusercontent.com/96898896/173132601-068dc901-7084-4990-8254-42d22bc16ded.gif)
 
 ### Reflection
 
