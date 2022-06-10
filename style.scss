@@ -21,6 +21,7 @@ body{
     .header-wrapper{
         min-height: 5rem;
         .header{
+            z-index: 9;
             position: fixed;
             display: flex;
             flex-direction: row;
@@ -48,6 +49,26 @@ body{
                     padding: 1.5rem;
                     min-width: 4rem;
                     text-align: center;
+                    border: solid 1px rgb(25, 25, 25);
+                    &:hover{
+                        background-color: rgb(54, 54, 54);
+                        transition: 200ms ease-in-out;
+                    }
+                    .genres-list{
+                        z-index: 10;
+                        position: fixed;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        min-width: 30rem;
+                        background-color:  rgb(54,54,54);
+                        right: 21%;
+                        top: 9%;
+                        display: none;
+                        padding: 1rem;
+                        .genres-item:hover{
+                            background-color: rgb(25,25,25);
+                        }
+                    }
                 }
             }
             .search-form{
@@ -120,4 +141,8 @@ body{
             }
         }
     }
+}
+
+#genres:hover .genres-list {
+    display: grid;
 }
