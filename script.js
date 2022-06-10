@@ -285,19 +285,19 @@ async function getMovieDetails(movieId) {
 
     //add the pop up to the container
     popupGrid.innerHTML += `
-        <div class="popup-card" id="popup-${popupIndex}">
-        <lite-youtube videoid=${youtubeKey} playlabel="Play: Keynote (Google I/O '18)" class="trailer"></lite-youtube>
-        <div class="movie-details"> 
-        <h1 class='movie-title'>${title}</h1>
-        <img class='movie-poster movie-poster-${popupIndex}' src=${imgUrl} alt='movie-poster' onclick="popup(${popupIndex})">
-            <h1 class='movie-votes'>Rating: ${responseData.vote_average}</h1>
-            <h1 class='movie-genres'>Genres: ${genresStr}</h1>
-            <h1 class='movie-release'>Release date: ${responseData.release_date}</h1>
-            <h1 class='movie-runtime'>Runtime: ${responseData.runtime} minutes</h1>
-            <span>${responseData.overview}</span>
-        </div>
+    <div class="popup-card" id="popup-${popupIndex}">
+    <iframe class="trailer" style="width: 560px; height: 315px;" src="${youtubeUrl + youtubeKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="movie-details"> 
+    <h1 class='movie-title'>${title}</h1>
+    <img class='movie-poster movie-poster-${popupIndex}' src=${imgUrl} alt='movie-poster' onclick="popup(${popupIndex})">
+        <h1 class='movie-votes'>Rating: ${responseData.vote_average}</h1>
+        <h1 class='movie-genres'>Genres: ${genresStr}</h1>
+        <h1 class='movie-release'>Release date: ${responseData.release_date}</h1>
+        <h1 class='movie-runtime'>Runtime: ${responseData.runtime} minutes</h1>
+        <span>${responseData.overview}</span>
     </div>
-        `
+</div>
+    `
     popupIndex++
 }
 
