@@ -56,7 +56,7 @@ If I had more time I would love to try to improve the youtube embeds loading spe
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Getting the search by genre to work and the popup went well in the end, I definitely struggled a lot. One things that didn't go as planned and I noticed someone mention that is about the youtube embeds. It's causing my website to be really slow because it takes a little bit of time to load. A peer mentioned that they were using promises so I would love to look into that and improve the running speed of the site. 
 
 ### Open-source libraries used
 
