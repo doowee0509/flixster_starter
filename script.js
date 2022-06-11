@@ -294,7 +294,7 @@ async function getMovieDetails(movieId) {
         <h1 class='movie-genres'>Genres: ${genresStr}</h1>
         <h1 class='movie-release'>Release date: ${responseData.release_date}</h1>
         <h1 class='movie-runtime'>Runtime: ${responseData.runtime} minutes</h1>
-        <span>${responseData.overview}</span>
+    <span>${responseData.overview}</span>
     </div>
 </div>
     `
