@@ -51,16 +51,18 @@ body {
   width: 100%;
 }
 
-.body-container .header-wrapper .header h1 {
+.body-container .header-wrapper .header .header-title {
+  max-height: 5rem;
   padding: 1rem;
 }
 
-.body-container .header-wrapper .header h1 a {
+.body-container .header-wrapper .header .header-title a {
   color: #db0602;
   text-decoration: none;
+  font-size: 2rem;
 }
 
-.body-container .header-wrapper .header h1 a:active {
+.body-container .header-wrapper .header .header-title a:active {
   color: #db0602;
 }
 
@@ -77,7 +79,6 @@ body {
 .body-container .header-wrapper .header .menu-bar .menu-bar-item {
   color: white;
   padding: 1.5rem;
-  min-width: 4rem;
   text-align: center;
   border: solid 1px #191919;
 }
@@ -89,28 +90,41 @@ body {
   transition: 200ms ease-in-out;
 }
 
-.body-container .header-wrapper .header .menu-bar .menu-bar-item .genres-list {
+.body-container .header-wrapper .header .menu-bar #genres {
+  position: relative;
+}
+
+.body-container .header-wrapper .header .menu-bar #genres .genres-list {
   z-index: 10;
-  position: fixed;
-  display: -ms-grid;
-  display: grid;
+  position: absolute;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   min-width: 30rem;
   background-color: #363636;
-  right: 28%;
-  top: 7%;
-  display: none;
+  display: -ms-grid;
+  display: grid;
+  -webkit-transform: translate(-45%, 12%);
+          transform: translate(-45%, 12%);
   padding: 1rem;
+  display: none;
 }
 
-.body-container .header-wrapper .header .menu-bar .menu-bar-item .genres-list .genres-item:hover {
+.body-container .header-wrapper .header .menu-bar #genres .genres-list .genres-item:hover {
   background-color: #191919;
+  max-width: 4rem;
   cursor: pointer;
+}
+
+.body-container .header-wrapper .header .menu-bar #genres:hover .genres-list {
+  display: -ms-grid;
+  display: grid;
 }
 
 .body-container .header-wrapper .header .search-form {
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .body-container .header-wrapper .header .search-form .search-bar {
@@ -225,6 +239,13 @@ body {
   height: 50rem;
   max-width: 70%;
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .body-container .popup-container .popup-card h1 {
@@ -232,9 +253,9 @@ body {
 }
 
 .body-container .popup-container .close-btn {
-  position: fixed;
-  right: 25.5%;
-  top: 7.5%;
+  position: absolute;
+  right: 26%;
+  top: 8%;
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -269,18 +290,72 @@ body {
   pointer-events: all;
 }
 
-#genres:hover .genres-list {
-  display: -ms-grid;
-  display: grid;
-}
-
 @media screen and (max-width: 1440px) {
-  .genres-list {
-    right: 20.4% !important;
-    top: 9.2% !important;
-  }
   .popup-card {
     height: 40rem !important;
+  }
+  .popup-card .trailer {
+    width: 360px !important;
+    height: 215px !important;
+    resize: both !important;
+  }
+  .popup-card h1 {
+    font-size: 1rem !important;
+  }
+  .popup-card span {
+    font-size: .8rem !important;
+  }
+  .close-btn {
+    top: 16% !important;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .popup-card {
+    min-width: 75% !important;
+  }
+  .close-btn {
+    right: 11% !important;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .menu-bar-item {
+    padding: 1rem !important;
+  }
+  .genres-list {
+    -webkit-transform: translate(-45%, 8%) !important;
+            transform: translate(-45%, 8%) !important;
+  }
+  .popup-card {
+    min-width: 75% !important;
+  }
+  .popup-card .trailer {
+    width: 360px !important;
+    height: 215px !important;
+    resize: both !important;
+  }
+  .popup-card h1 {
+    font-size: 1rem !important;
+  }
+  .popup-card span {
+    font-size: .8rem !important;
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .header-title {
+    display: none;
+  }
+  .menu-bar {
+    padding-left: 2rem;
+  }
+  .menu-bar-item {
+    padding: 1.5rem !important;
+  }
+  .genres-list {
+    -webkit-transform: translate(-45%, 10%) !important;
+            transform: translate(-45%, 10%) !important;
   }
   .popup-card .trailer {
     width: 360px !important;

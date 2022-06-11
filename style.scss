@@ -30,15 +30,17 @@ body{
             background-color: rgb(25, 25, 25);
             border-bottom: solid 2px rgb(54, 54, 54);
             width: 100%;
-            h1{
+            .header-title{
+                max-height: 5rem;
+                padding: 1rem;
                 a{
                     color:#db0602;
                     text-decoration: none;
+                    font-size: 2rem;
                     &:active{
                         color: #db0602;
                     }
                 }
-                padding: 1rem;
             }
             .menu-bar{
                 display: flex;
@@ -46,7 +48,6 @@ body{
                 .menu-bar-item{
                     color: white;
                     padding: 1.5rem;
-                    min-width: 4rem;
                     text-align: center;
                     border: solid 1px rgb(25, 25, 25);
                     &:hover{
@@ -54,26 +55,34 @@ body{
                         cursor: pointer;
                         transition: 200ms ease-in-out;
                     }
+                }
+                #genres{
+                    position: relative;
                     .genres-list{
                         z-index: 10;
-                        position: fixed;
-                        display: grid;
+                        position: absolute;
                         grid-template-columns: 1fr 1fr 1fr;
                         min-width: 30rem;
                         background-color:  rgb(54,54,54);
-                        right: 28%;
-                        top: 7%;
-                        display: none;
+                        display: grid;
+                        transform: translate((-45%,12%));
                         padding: 1rem;
+                        display: none;
                         .genres-item:hover{
                             background-color: rgb(25,25,25);
+                            max-width: 4rem;
                             cursor: pointer;
                         }
                     }
+
+                }
+                #genres:hover .genres-list {
+                    display: grid;
                 }
             }
             .search-form{
                 padding: 1rem;
+                display: flex;
                 .search-bar{
                     padding-right: 1rem;
                     width: 100%;
@@ -159,14 +168,16 @@ body{
             height:50rem;
             max-width: 70%;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
             h1{
                 font-size: 1.2rem;
             }
         }
         .close-btn{
-            position: fixed;
-            right: 25.5%;
-            top: 7.5%;
+            position: absolute;
+            right: 26%;
+            top: 8%;
             font-size: 1.5rem;
             font-weight: bold;
             cursor: pointer;
@@ -199,20 +210,74 @@ body{
     }
 }
 
-
-#genres:hover .genres-list {
-    display: grid;
-}
-
 // media queries
 
 @media screen and (max-width: 1440px){
-    .genres-list{
-        right: 20.4% !important;
-        top: 9.2% !important;
-    }
     .popup-card{
         height: 40rem !important;
+        .trailer{
+            width: 360px !important;
+            height: 215px !important;
+            resize: both !important;
+        }
+        h1{
+            font-size: 1rem !important;
+        }
+        span{
+            font-size: .8rem !important;
+        }
+    }
+    .close-btn{
+        top: 16% !important;
+    }
+}
+
+@media screen and (max-width: 1150px){
+    .popup-card{
+        min-width: 75% !important;
+    }
+    .close-btn{
+        right: 11% !important;
+    }
+}
+
+@media screen and (max-width: 945px){
+    .menu-bar-item{
+        padding: 1rem !important;
+    }
+    .genres-list{
+        transform: translate(-45%, 8%) !important;
+    }
+    .popup-card{
+        min-width: 75% !important;
+        .trailer{
+            width: 360px !important;
+            height: 215px !important;
+            resize: both !important;
+        }
+        h1{
+            font-size: 1rem !important;
+        }
+        span{
+            font-size: .8rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 865px){
+    .header-title{
+        display: none;
+    }
+    .menu-bar{
+        padding-left: 2rem;
+    }
+    .menu-bar-item{
+        padding: 1.5rem !important;
+    }
+    .genres-list{
+        transform: translate(-45%, 10%) !important;
+    }
+    .popup-card{
         .trailer{
             width: 360px !important;
             height: 215px !important;
